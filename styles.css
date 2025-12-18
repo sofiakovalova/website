@@ -8,41 +8,39 @@ body {
 
 .container {
   display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
   grid-template-areas:
     "top top top"
     "left menu right"
     "left main right"
-    "footer footer footer"
+    "footer footer right" 
     "bottom bottom bottom";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto auto 1fr auto auto;
-  gap: 5px; 
+  gap: 10px; 
   padding: 10px;
+  min-height: 100vh;
 }
-
-
-/*.container {
-  position: relative;
-}
-*/
-
 
 .top-bar {
   grid-area: top;
   background: #005f99;
   color: white;
-  padding: 15px;
+  padding: 20px;
   position: relative;
   border-radius: 8px;
+  text-align: right; 
 }
 
 .top-bar .corner {
-  position: absolute;
-  right: 15px;
-  top: 10px;       
+  background: white;
+  color: #005f99;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 4px;
   font-weight: bold;
 }
-
 
 aside.left {
   grid-area: left;
@@ -56,40 +54,10 @@ aside.right {
   background: #cce0ff;
   padding: 15px;
   border-radius: 8px;
-
-  position: relative;          
-  height: calc(100% + 25px); /* трохи довше за попередній варіант +20px */
-  z-index: 3;                  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
-/*aside.right {
-  grid-area: right;
-  background: #cce0ff;
-  padding: 15px;
-  border-radius: 8px;
-
-  position: relative;          
-  height: calc(100% + 50px);   
-  z-index: 3;                  
-}
-*/
-
-/*aside.right {
-  grid-area: right;
-  background: #cce0ff;
-  padding: 15px;
-  border-radius: 8px;
-}
-  */
-
-
-aside img {
-  max-width: 100%;
-  margin-top: 10px;
-  border-radius: 6px;
-}
-
 
 nav.menu {
   grid-area: menu;
@@ -113,20 +81,12 @@ nav.menu ul li a {
   font-weight: bold;
 }
 
-nav.menu ul li a:hover,
-nav.menu ul li a.active {
-  background: #0066aa;
-  border-radius: 4px;
-}
-
 main {
   grid-area: main;
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .footer-strip {
@@ -134,15 +94,9 @@ main {
   background: #99ccff;
   padding: 15px;
   border-radius: 8px;
-  position: relative;
-  z-index: 2; 
-  margin-top: 0; /* було -40px */
-}
-
-
-aside.right {
-  position: relative;
-  z-index: 3;
+  text-align: center;
+  color: #003366;
+  font-weight: bold;
 }
 
 .bottom-bar {
@@ -150,13 +104,21 @@ aside.right {
   background: #005f99;
   color: white;
   padding: 15px;
-  position: relative;
   border-radius: 8px;
+  text-align: right; 
 }
 
 .bottom-bar .corner {
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
+  background: white;
+  color: #005f99;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 4px;
   font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
